@@ -1,3 +1,30 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+ion-item{
+  --padding-start: 10px;
+  --inner-padding-end: 10px;
+
+  ion-thumbnail {
+    height: 100%;
+    margin-inline-end: 10px;
+  }
+}
+ion-button{
+  --border-radius: 05px;
+  --padding-start: 06px;
+  --padding-end: 05px;
+}
+
+h1{
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+p {
+  font-size: 0.6rem;
+}
+
+p + p {
+  color: #444444
+}

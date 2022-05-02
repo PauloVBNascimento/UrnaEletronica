@@ -1,29 +1,53 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Photo Gallery
+      Urna Eletronica
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Photo Gallery</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content color="light">
+  <ion-searchbar placeholder="Procurar"></ion-searchbar>
 
-  <ion-grid>
-    <ion-row>
-    <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-      <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
-    </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-list>
+    <ion-item lines="full">
+      <ion-thumbnail slot="start">
+        <img src="data:image/jpeg;base64,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">
+      </ion-thumbnail>
+      <ion-label>
+        <div>
+          <h1>Candidato: Marcelo Revende</h1>
+          <p>Partido: PL - Partido dos Ladrões</p>
+          <p>Número: 171</p>
+          <ion-chip color="success">
+            <ion-label>Votos: 65%</ion-label>
+          </ion-chip>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button color="warning" size="large">Corrige</ion-button>
+  <ion-button color="success" size="large">Confirma</ion-button>
 
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="photoService.addNewToGallery()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <br><br>
+  <ion-card>  
+  <ion-list>
+    <ion-item lines="full">
+      <ion-thumbnail slot="start">
+        <img src="https://blog.supernosso.com/wp-content/uploads/2021/08/Como-temperar-uma-salada-opt-540x326.jpg">
+      </ion-thumbnail>
+      <ion-label>
+        <div>
+          <h1>Candidato: Salada Fria</h1>
+          <p>Partido: PJ - Partido Jogador</p>
+          <p>Número: 898</p>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-card-content>
+Meu governo terá saladas!!!
+  </ion-card-content>
+</ion-card>
+
 </ion-content>
